@@ -5,7 +5,7 @@ export default function TodoList(props) {
 	console.log(props.list);
 	return (
 		<div>
-			<table className='table bg-light'>
+			<table className='table bg-light mt-2'>
 				<thead>
 					<tr>
 						<th>Date</th>

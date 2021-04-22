@@ -8,9 +8,7 @@ export default class Home extends Component {
 
 	async componentDidMount() {
 		let theList = await todoService.getAll();
-		console.log(theList);
 		this.setState({ data: theList });
-		console.log(this.state);
 	}
 
 	render() {
