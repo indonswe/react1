@@ -37,8 +37,15 @@ let theData = [
 	},
 ];
 class todoService {
-	getAll() {
-		return theData;
+	async getAll() {
+		let promise = new Promise((resolve, reject) => {
+			setTimeout(() => resolve(theData), 1000);
+		});
+		return promise;
+	}
+
+	async getById(id) {
+		return theData.find((item) => item.id === id);
 	}
 }
 export default new todoService();
