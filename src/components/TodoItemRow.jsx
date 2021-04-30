@@ -15,7 +15,8 @@ export default function TodoItemRow(props) {
 				<input
 					type='button'
 					className='btn btn-warning btn-sm'
-					value='Show details'
+					//value='Show details'
+					value = 'item.id'
 					onClick={() => props.itemClick(item.id)}
 				/>
 			</td>

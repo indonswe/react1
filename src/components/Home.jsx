@@ -3,12 +3,14 @@ import TodoList from './TodoList';
 import TodoDetails from './TodoDetails';
 import todoService from '../api/service';
 import TodoCreate from './TodoCreate';
+import recipeService from '../api/staticRecipeData';
 
 export default class Home extends Component {
 	state = { data: [], isLoading: true, showDetails: false, selectId: '', showCreate: false };
 
 	async componentDidMount() {
-		let theList = await todoService.getAll();
+		//let theList = await todoService.getAll();
+		let theList = await recipeService.getAll();
 		this.setState({ data: theList, isLoading: false });
 		console.log('mounting Home component');
 	}
