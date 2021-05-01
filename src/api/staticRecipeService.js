@@ -94,7 +94,7 @@ let theData = [
 		},
 	},
 ];
-​const theIngredients = [
+const theIngredients = [
 	{
 		id: 1,
 		name: 'milk',
@@ -146,5 +146,4 @@ class staticRecipeService {
 		return theIngredients.find((item) => item.id === id);
 	}
 }
-​
 export default new staticRecipeService();
