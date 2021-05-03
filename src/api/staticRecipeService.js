@@ -145,5 +145,6 @@ class staticRecipeService {
 	async getIngredient(id) {
 		return theIngredients.find((item) => item.id === id);
 	}
+	
 }
 export default new staticRecipeService();
