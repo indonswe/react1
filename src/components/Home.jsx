@@ -9,8 +9,8 @@ export default class Home extends Component {
 	state = { data: [], isLoading: true, showDetails: false, selectId: '', showCreate: false };
 
 	async componentDidMount() {
-		let theList = await todoService.getAll();
-		//let theList = await recipeService.getAll();
+		//let theList = await todoService.getAll();
+		let theList = await recipeService.getAllRecipes();
 		this.setState({ data: theList, isLoading: false });
 		console.log('mounting Home component');
 	}
