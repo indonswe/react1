@@ -8,6 +8,22 @@ export default function TodoItemRow(props) {
 	let item = props.itemData;
 	return (
 		<tr>
+			<td>{item.name}</td>
+			<td>{item.instructions}</td>
+			<td>{item.category.name}</td>
+			<td>
+				<input
+					type='button'
+					className='btn btn-warning btn-sm'
+					//value='Show details'
+					value = 'item.id'
+					onClick={() => props.itemClick(item.id)}
+				/>
+			</td>
+		</tr>
+	);
+	/*return (
+		<tr>
 			<td>{item.deadline}</td>
 			<td>{item.title}</td>
 			<td>{item.assignee.firstName}</td>
@@ -21,5 +37,5 @@ export default function TodoItemRow(props) {
 				/>
 			</td>
 		</tr>
-	);
+	);*/
 }

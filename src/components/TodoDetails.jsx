@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import todoService from '../api/service';
+import todoServiceRecipe from '../api/staticRecipeService';
 
 export default function TodoDetails(props) {
 	const [todoItem, setTodoItem] = useState({
@@ -9,7 +10,9 @@ export default function TodoDetails(props) {
 
 	useEffect(() => {
 		async function fetchData() {
-			let theItem = await todoService.getById(props.id);
+			//let theItem = await todoService.getById(props.id);
+		
+		let theItem = await todoServiceRecipe.getAllRecipes(props.id);
 			//console.log('component TodoDetails mounted', todoItem);
 
 			setTodoItem({ item: theItem, isLoading: false });

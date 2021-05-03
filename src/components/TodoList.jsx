@@ -11,9 +11,9 @@ export default function TodoList(props) {
 			<table className='table bg-light mt-2'>
 				<thead>
 					<tr>
-						<th>Date</th>
-						<th>Title</th>
-						<th>Assignee</th>
+						<th>Recipe</th>
+						<th>Description</th>
+						<th>Category</th>
 					</tr>
 				</thead>
 				<tbody>
