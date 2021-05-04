@@ -12,7 +12,7 @@ export default function TodoDetails(props) {
 		async function fetchData() {
 			//let theItem = await todoService.getById(props.id);
 		
-		let theItem = await todoServiceRecipe.getAllRecipes(props.id);
+		let theItem = await todoServiceRecipe.getRecipe(props.id);
 			//console.log('component TodoDetails mounted', todoItem);
 
 			setTodoItem({ item: theItem, isLoading: false });
@@ -21,10 +21,27 @@ export default function TodoDetails(props) {
 		fetchData();
 	}, [props.id]);
 
+	/*return (
+		<React.Fragment>
+			<h3>Id:{props.id}</h3>
+			{todoItem.isLoading ? <h1>Loading data</h1> : <h3>Title:{todoItem.item.ingredients(1).name}</h3>}
+		</React.Fragment>
+	);
 	return (
 		<React.Fragment>
 			<h3>Id:{props.id}</h3>
-			{todoItem.isLoading ? <h1>Loading data</h1> : <h3>Title:{todoItem.item.title}</h3>}
+			{todoItem.isLoading ? <h1>Loading data</h1> : <h3>Title:{todoItem.item.name}</h3>}
 		</React.Fragment>
-	);
+	);*/
+	return (
+		<React.Fragment>
+		{todoItem.item.ingredients && todoItem.item.ingredients.map(delar =>
+                        <tr key={delar.id}>
+                            <td>{delar.name}</td>
+                        </tr>
+                    )}
+	</React.Fragment>
+	)
+
+
 }

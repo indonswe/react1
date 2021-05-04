@@ -4,6 +4,7 @@ import TodoDetails from './TodoDetails';
 import todoService from '../api/service';
 import TodoCreate from './TodoCreate';
 import recipeService from '../api/staticRecipeService';
+import update from '../api/update';
 
 export default class Home extends Component {
 	state = { data: [], isLoading: true, showDetails: false, selectId: '', showCreate: false };
@@ -11,7 +12,10 @@ export default class Home extends Component {
 	async componentDidMount() {
 		//let theList = await todoService.getAll();
 		let theList = await recipeService.getAllRecipes();
-		this.setState({ data: theList, isLoading: false });
+		let listUpdate = await update.getNewData();
+		//this.setState({data:listUpdate, isLoading:false});
+		this.setState({ data: theList.concat(listUpdate ), isLoading: false }); 
+		//this.setState({ data: theList, isLoading: false });
 		console.log('mounting Home component');
 	}
 
