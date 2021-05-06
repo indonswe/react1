@@ -12,14 +12,16 @@ export default function TodoDetails(props) {
 		async function fetchData() {
 			//let theItem = await todoService.getById(props.id);
 		
-		let theItem = await todoServiceRecipe.getRecipe(props.id);
+		//let theItem = await todoServiceRecipe.getRecipe(props.id);
 			//console.log('component TodoDetails mounted', todoItem);
+			let theItem = await props.item;
 
 			setTodoItem({ item: theItem, isLoading: false });
+			console.log({todoItem})
 			//console.log('component TodoDetails mounted', todoItem); // ...
 		}
 		fetchData();
-	}, [props.id]);
+	}, [props.item]);
 
 	/*return (
 		<React.Fragment>
@@ -35,6 +37,7 @@ export default function TodoDetails(props) {
 	);*/
 	return (
 		<React.Fragment>
+			
 		{todoItem.item.ingredients && todoItem.item.ingredients.map(delar =>
                         <tr key={delar.id}>
                             <td>{delar.name}</td>

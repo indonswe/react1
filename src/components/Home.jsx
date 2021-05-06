@@ -54,7 +54,8 @@ export default class Home extends Component {
 				</div>
 				<div className='col bg-secondary'>
 					{this.state.showDetails ? (
-						<TodoDetails id={this.state.selectId} />
+						//<TodoDetails id={this.state.selectId} />
+						<TodoDetails item={this.state.selectedItem}/>
 					) : this.state.showCreate ? (
 						<TodoCreate />
 					) : (
