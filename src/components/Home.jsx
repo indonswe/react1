@@ -43,7 +43,7 @@ export default class Home extends Component {
 							<input
 								type='button'
 								className='btn btn-danger btn-sm'
-								value='Create new todo'
+								value='Add new recipe'
 								onClick={() => {
 									this.setState({ showDetails: false, showCreate: true });
 								}}

@@ -17,6 +17,33 @@ export default function TodoCreate() {
 	return (
 		<div>
 			<h4>Input new data</h4>
+      <form>
+  <label>
+    Name:
+    <input type="text" name="Name on recipe" />
+    </label>
+    <label>
+    Instructions:
+    <input type="text" name="Instructions" />
+    </label>
+    <label>
+    Ingredients:
+    <input type="text" name="Ingredients" />
+    </label>
+    <label>
+    Ingredients:
+    <input type="text" name="Ingredients" />
+    </label>
+    <label>
+    Ingredients:
+    <input type="text" name="Ingredients" />
+    </label>
+    <label>
+    Category: 
+    <input type="text" name="Category" />
+  </label>
+  <input type="submit" value="Submit" />
+</form>
 		</div>
 	);
 }
