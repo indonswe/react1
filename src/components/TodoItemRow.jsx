@@ -6,7 +6,7 @@ export default function TodoItemRow(props) {
 	}, []);
 
 	let item = props.itemData;
-	console.log({item});
+	console.log({ item });
 	return (
 		<tr>
 			<td>{item.name}</td>
@@ -17,9 +17,9 @@ export default function TodoItemRow(props) {
 					type='button'
 					className='btn btn-warning btn-sm'
 					//value='Show details'
-					value={item.id}
+					value='Details'
 					//value = 'item.id'
-					
+
 					onClick={() => props.itemClick(item)}
 				/>
 			</td>

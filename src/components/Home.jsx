@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
 import TodoList from './TodoList';
 import TodoDetails from './TodoDetails';
-import todoService from '../api/service';
 import TodoCreate from './TodoCreate';
 import recipeService from '../api/staticRecipeService';
 import update from '../api/update';
 
 export default class Home extends Component {
-	state = { data: [], isLoading: true, showDetails: false, selectId: '', showCreate: false };
+	state = { data: [], isLoading: true, showDetails: false, selectItem: '', showCreate: false };
 
 	async componentDidMount() {
 		//let theList = await todoService.getAll();
 		let theList = await recipeService.getAllRecipes();
 		let listUpdate = await update.getNewData();
 		//this.setState({data:listUpdate, isLoading:false});
-		this.setState({ data: theList.concat(listUpdate ), isLoading: false }); 
+		this.setState({ data: theList.concat(listUpdate), isLoading: false });
 		//this.setState({ data: theList, isLoading: false });
 		console.log('mounting Home component');
 	}
 
-	displayDetails = (id) => {
-		console.log('clicked id', id);
+	displayDetails = (item) => {
+		console.log('clicked id', item);
 		this.setState({
 			showDetails: true,
-			selectId: id,
+			selectItem: item,
 			showCreate: false,
 		});
 	};
@@ -55,7 +54,7 @@ export default class Home extends Component {
 				<div className='col bg-secondary'>
 					{this.state.showDetails ? (
 						//<TodoDetails id={this.state.selectId} />
-						<TodoDetails item={this.state.data}/>
+						<TodoDetails item={this.state.selectItem} />
 					) : this.state.showCreate ? (
 						<TodoCreate />
 					) : (
