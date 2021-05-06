@@ -16,7 +16,7 @@ export default function TodoCreate() {
 
 	return (
 		<div>
-			<h4>This is a create form</h4>
+			<h4>Input new data</h4>
 		</div>
 	);
 }
