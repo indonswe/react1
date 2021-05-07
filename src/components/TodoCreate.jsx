@@ -4,7 +4,12 @@ import React from 'react';
 
 export default function TodoCreate() {
 	
-	
+
+
+
+	//addData: function({}) {
+  
+  
 	
 	
 	/*addRow: function() {
@@ -18,6 +23,13 @@ export default function TodoCreate() {
 		<div>
 			<h4>Input new data</h4>
       <form>
+      <div>
+			<h4>Input new Recipe</h4>
+      <form>
+      <label>
+    Id:
+    <input type="number" name="Name on recipe" />
+    </label>
   <label>
     Name:
     <input type="text" name="Name on recipe" />
@@ -43,6 +55,9 @@ export default function TodoCreate() {
     <input type="text" name="Category" />
   </label>
   <input type="submit" value="Submit" />
+</form>
+		</div>  
+    
 </form>
 		</div>
 	);
