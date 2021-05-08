@@ -4,6 +4,9 @@ import TodoDetails from './TodoDetails';
 import TodoCreate from './TodoCreate';
 import recipeService from '../api/staticRecipeService';
 import update from '../api/update';
+import TryFormList from './TryFormList';
+import TryForm from './TryForm';
+
 
 export default class Home extends Component {
 	state = { data: [], isLoading: true, showDetails: false, selectItem: '', showCreate: false };
@@ -15,6 +18,8 @@ export default class Home extends Component {
 		//this.setState({data:listUpdate, isLoading:false});
 		this.setState({ data: theList.concat(listUpdate), isLoading: false });
 		//this.setState({ data: theList, isLoading: false });
+		//let newCreateList = await TodoCreate.state.value;
+		//this.setState({data: theList.concat(newCreateList), isLoading = false});
 		console.log('mounting Home component');
 	}
 
@@ -49,6 +54,7 @@ export default class Home extends Component {
 								}}
 							/>
 						</div>
+						
 					)}
 				</div>
 				<div className='col bg-secondary'>
@@ -61,7 +67,20 @@ export default class Home extends Component {
 						<h1>Welcome</h1>
 					)}
 				</div>
+				<div>
+							<TryForm list={this.state.data} itemClick={this.displayDetails} />
+							<input
+								type='button'
+								className='btn btn-danger btn-sm'
+								value='TryForm'
+								onClick={() => {
+									this.setState({ showDetails: false, showCreate: true });
+								}}
+							/>
+						</div>
 			</div>
+			
 		);
 	}
 }
+

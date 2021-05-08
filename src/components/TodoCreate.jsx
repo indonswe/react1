@@ -1,15 +1,103 @@
-import React from 'react';
+import React, {component} from 'react';
+
+class TodoCreate extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+    //this.state = {data[]};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <label>
+    Instructions:
+    <input type="text" value={this.state.value} onChange={this.handleChange} />
+    </label>
+    <label>
+    Ingredients:
+    <input type="text" value={this.state.value} onChange={this.handleChange} />
+    </label>
+    <label>
+    Category:
+    <input type="text" value={this.state.value} onChange={this.handleChange} />
+    </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+
+export default TodoCreate
 
 
+//import React, {component} from 'react';
 
-export default function TodoCreate() {
+/*class inputForm {
+  
+  handleSubmit = () => {
+
+  }*/
+//class TodoCreate extends Component {
+//export default function TodoCreate() {
+ // export default class TodoCreate extends Component{
 	
+   // handleSubmit = () => {
+
+   // }
+
+  
   //class TodoCreate extends React.Component {
-    state = { companyName: '' };
+   // state = { companyName: '' };
 
-<form>
 
-  <label>
+
+
+	//addData: function({}) {
+  
+  
+	
+	
+	/*addRow: function() {
+		// add new data from here    
+		var newdata = {fname:"Tom",lname:"Moody",age:23}    
+		//take the existing state and concat the new data and set the state again    
+	  this.setState({ tablerows: this.state.tablerows.concat(newdata ) });    
+	},*/
+//render(){
+/*	return (
+	<div>
+		//	<h4>Input new data</h4>
+      <form onSubmit = {this.handleSubmit}>
+      <label>
+    Id:
+    <input type="number" name="Name on recipe" />
+    </label>
+    <input type="submit" value="Submit" />
+      </form>
+      </div>
+  )
+  };*/
+
+
+ /* <label>
     Id:
     <input type="number" name="Name on recipe" />
     </label>
@@ -39,35 +127,12 @@ export default function TodoCreate() {
   </label>
   <input type="submit" value="Submit" />
   </form>
-
-
-	//addData: function({}) {
-  
-  
-	
-	
-	/*addRow: function() {
-		// add new data from here    
-		var newdata = {fname:"Tom",lname:"Moody",age:23}    
-		//take the existing state and concat the new data and set the state again    
-	  this.setState({ tablerows: this.state.tablerows.concat(newdata ) });    
-	},*/
-
-	return (
-		<div>
-			<h4>Input new data</h4>
-      <form>
-      <div>
-			<h4>Input new Recipe</h4>
-      <form>
+	//	</div>
     
-</form>
-		</div>  
-    
-</form>
-		</div>
 	);
-}
+  }*/
+
+//export default TodoCreate
 /*var RecordsComponent = React.createClass({
 
       getInitialState: function () {
