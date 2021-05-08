@@ -4,29 +4,12 @@ import React from 'react';
 
 export default function TodoCreate() {
 	
+  //class TodoCreate extends React.Component {
+    state = { companyName: '' };
 
+<form>
 
-
-	//addData: function({}) {
-  
-  
-	
-	
-	/*addRow: function() {
-		// add new data from here    
-		var newdata = {fname:"Tom",lname:"Moody",age:23}    
-		//take the existing state and concat the new data and set the state again    
-	  this.setState({ tablerows: this.state.tablerows.concat(newdata ) });    
-	},*/
-
-	return (
-		<div>
-			<h4>Input new data</h4>
-      <form>
-      <div>
-			<h4>Input new Recipe</h4>
-      <form>
-      <label>
+  <label>
     Id:
     <input type="number" name="Name on recipe" />
     </label>
@@ -55,6 +38,29 @@ export default function TodoCreate() {
     <input type="text" name="Category" />
   </label>
   <input type="submit" value="Submit" />
+  </form>
+
+
+	//addData: function({}) {
+  
+  
+	
+	
+	/*addRow: function() {
+		// add new data from here    
+		var newdata = {fname:"Tom",lname:"Moody",age:23}    
+		//take the existing state and concat the new data and set the state again    
+	  this.setState({ tablerows: this.state.tablerows.concat(newdata ) });    
+	},*/
+
+	return (
+		<div>
+			<h4>Input new data</h4>
+      <form>
+      <div>
+			<h4>Input new Recipe</h4>
+      <form>
+    
 </form>
 		</div>  
     
