@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-export default function TryForm() {
+export default function TryForm(props) {
 	
+ console.log('tryform props:', props.list);
+ const [todoItem, setTodoItem] = useState({
+    item: '',
+    isLoading: true,
+});
 
+useEffect(() => {
+    async function fetchData() {
+        //let theItem = await todoService.getById(props.id);
+
+        //let theItem = await todoServiceRecipe.getRecipe(props.id);
+        //console.log('component TodoDetails mounted', todoItem);
+        let theItem = await props.item;
+
+        setTodoItem({ item: theItem, isLoading: false });
+        console.log({ theItem });
+        //console.log('component TodoDetails mounted', todoItem); // ...
+    }
+    fetchData();
+}, [props.item]);
+return(
+<React.Fragment>
+
+			
+		</React.Fragment>
+	);
+}
+
+
+/*
     return (
 		<div>
-			<h4>TryForm</h4>
+			<h3>Id:{props.id}</h3>
       <form>
       <div>
 			<h4>Input new Tryform</h4>
@@ -18,23 +47,5 @@ export default function TryForm() {
 		</div>
 	);
 
-}
+}*/
 
-/*class Form extends React.Component {
-    state = { companyName: 'Microsoft' };
-  
-      render() {
-        return (
-          <form>
-        <span className="formtext">&#x3C;Form /&#x3E;</span>
-            <input 
-            type="text" 
-            value={this.state.companyName}
-            placeholder="Enter Company Name" 
-            required 
-          />
-          <button>Go!</button>
-          </form>
-      );
-    }
-  }*/
