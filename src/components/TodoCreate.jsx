@@ -5,9 +5,9 @@ import Home from './Home';
 class TodoCreate extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: 'hej'};
+    //this.state = {value: 'hej'};
     //this.state = {value: props.id}
-    //this.state = {data};
+    this.state = {props};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,7 +42,7 @@ class TodoCreate extends React.Component {
       <h3>here I want to print recipe with highest id</h3>
       </label>
       <label>
-      <h3>value={Home}</h3>
+      <h3>value={this.state.value}</h3>
       </label>
         <label>
           Name:
