@@ -62,7 +62,7 @@ export default class Home extends Component {
 						//<TodoDetails id={this.state.selectId} />
 						<TodoDetails item={this.state.selectItem} />
 					) : this.state.showCreate ? (
-						<TodoCreate />
+						<TodoCreate item={this.state.selectItem}/>
 					) : (
 						<h1>Welcome</h1>
 					)}

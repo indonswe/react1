@@ -1,15 +1,25 @@
-import React, {component} from 'react';
+import React, {component,useEffect,useState} from 'react';
 //import React, { useEffect, useState } from 'react';
+import Home from './Home';
 
 class TodoCreate extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
-    //this.state = {data[]};
+    this.state = {value: 'hej'};
+    //this.state = {value: props.id}
+    //this.state = {data};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  /*const [todoItem, setTodoItem] = useState({
+		item: '',
+		isLoading: true,
+	});*/
+
+	
+
 
   handleChange(event) {
     this.setState({value: event.target.value});
@@ -30,6 +40,9 @@ class TodoCreate extends React.Component {
       </label>
       <label>
       <h3>here I want to print recipe with highest id</h3>
+      </label>
+      <label>
+      <h3>value={Home}</h3>
       </label>
         <label>
           Name:
