@@ -1,4 +1,5 @@
 import React, {component} from 'react';
+//import React, { useEffect, useState } from 'react';
 
 class TodoCreate extends React.Component {
   constructor(props) {
@@ -22,7 +23,14 @@ class TodoCreate extends React.Component {
 
   render() {
     return (
+      
       <form onSubmit={this.handleSubmit}>
+        <label>
+      <h1>Input form</h1>
+      </label>
+      <label>
+      <h3>here I want to print recipe with highest id</h3>
+      </label>
         <label>
           Name:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
