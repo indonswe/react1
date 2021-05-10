@@ -14,17 +14,19 @@ useEffect(() => {
 
         //let theItem = await todoServiceRecipe.getRecipe(props.id);
         //console.log('component TodoDetails mounted', todoItem);
-        let theItem = await props.item;
+        let theItem = await props.list[1].name;
+        console.log('tryform props:', props.list[1].name);
 
         setTodoItem({ item: theItem, isLoading: false });
         console.log({ theItem });
+        console.log('todoItem:', todoItem);
         //console.log('component TodoDetails mounted', todoItem); // ...
     }
     fetchData();
 }, [props.item]);
 return(
 <React.Fragment>
-
+{todoItem.isLoading ? <h1>Loading data</h1> : <h3>Title:{todoItem.item}</h3>}
 			
 		</React.Fragment>
 	);
