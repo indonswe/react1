@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 export default function TryForm(props) {
 	
- console.log('tryform props:', props.list);
+ //console.log('tryform props:', props.list);
  const [todoItem, setTodoItem] = useState({
     item: '',
     isLoading: true,
