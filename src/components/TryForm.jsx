@@ -14,12 +14,26 @@ useEffect(() => {
 
         //let theItem = await todoServiceRecipe.getRecipe(props.id);
         //console.log('component TodoDetails mounted', todoItem);
-        let theItem = await props.list[1].name;
-        console.log('tryform props:', props.list[1].name);
+        //let propsLN = await props.list.propsLength;
+        //console.log(propsLN);
+        //{propsLN ?
+        //:}
+        //console.log(props.list.propsLength);
+        
+        let theItemId ='';
+        let theItem = await props.list;
+        console.log('tryform props:', props.list);
+        if (theItem != '' ) {
+            theItemId = theItem[2].id;
+          } else {
+            theItemId = '';
+          }
+        
 
-        setTodoItem({ item: theItem, isLoading: false });
+        setTodoItem({ item: theItemId, isLoading: false });
         console.log({ theItem });
         console.log('todoItem:', todoItem);
+        
         //console.log('component TodoDetails mounted', todoItem); // ...
     }
     fetchData();
