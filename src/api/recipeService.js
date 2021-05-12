@@ -1,6 +1,7 @@
 import axios from 'axios';
 class recipeService {
 	async getAllRecipes() {
+        console.log('gAR');
 		return await axios
 			.get('https://lexjava-recipes.herokuapp.com/api/recipes')
 			.then((response) => {
@@ -11,7 +12,6 @@ class recipeService {
 				console.log(error);
 			});
 	}
-​
 	async getRecipe(id) {
 		return await axios
 			.get('https://lexjava-recipes.herokuapp.com/api/recipes/' + id)
@@ -24,5 +24,4 @@ class recipeService {
 			});
 	}
 }
-​
 export default new recipeService();

@@ -6,7 +6,7 @@ import staticrecipeService from '../api/staticRecipeService';
 import update from '../api/update';
 import TryFormList from './TryFormList';
 import TryForm from './TryForm';
-import recipeService from '../api/recipeService';
+import recipeService from '../api/recipeService.js';
 
 
 export default class Home extends Component {
@@ -19,6 +19,12 @@ export default class Home extends Component {
 		this.setState({ data: theList.concat(listUpdate), isLoading: false });*/
 
 		let theList = await recipeService.getAllRecipes();
+
+		console.log('logund',{theList});
+
+	this.setState({ data: theList, isLoading: false });
+
+		//console.log('kollardata',{theList});
 
 
 		
