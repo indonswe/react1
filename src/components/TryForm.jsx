@@ -24,7 +24,7 @@ useEffect(() => {
         let theItem = await props.list;
         console.log('tryform props:', props.list);
         if (theItem != '' ) {
-            theItemId = theItem[2].id;
+            theItemId = theItem[1].id;
           } else {
             theItemId = '';
           }

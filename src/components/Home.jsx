@@ -2,24 +2,26 @@ import React, { Component } from 'react';
 import TodoList from './TodoList';
 import TodoDetails from './TodoDetails';
 import TodoCreate from './TodoCreate';
-import recipeService from '../api/staticRecipeService';
+import staticrecipeService from '../api/staticRecipeService';
 import update from '../api/update';
 import TryFormList from './TryFormList';
 import TryForm from './TryForm';
+import recipeService from '../api/recipeService';
 
 
 export default class Home extends Component {
-	state = { data: [], isLoading: true, showDetails: false, selectItem: '', showCreate: false };
+	state = { data: [], isLoading: true, showDetails: false, selectItem: '', showCreate: false};
 
 	async componentDidMount() {
-		//let theList = await todoService.getAll();
-		let theList = await recipeService.getAllRecipes();
+		
+		/*let theList = await recipeService.getAllRecipes();
 		let listUpdate = await update.getNewData();
-		//this.setState({data:listUpdate, isLoading:false});
-		this.setState({ data: theList.concat(listUpdate), isLoading: false });
-		//this.setState({ data: theList, isLoading: false });
-		//let newCreateList = await TodoCreate.state.value;
-		//this.setState({data: theList.concat(newCreateList), isLoading = false});
+		this.setState({ data: theList.concat(listUpdate), isLoading: false });*/
+
+		let theList = await recipeService.getAllRecipes();
+
+
+		
 		console.log('mounting Home component');
 	}
 
@@ -35,6 +37,14 @@ export default class Home extends Component {
 	displayCreate = () => {
 		this.setState({ showCreate: true });
 	};
+
+	/*displayTryForm = (item) => {
+		this.setState({
+			showDetails: true,
+			selectItem: item,
+			showCreate: false,
+		});
+	};*/
 
 	render() {
 		return (
