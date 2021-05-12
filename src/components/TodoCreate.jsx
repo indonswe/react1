@@ -27,7 +27,37 @@ class TodoCreate extends React.Component {
 
   handleSubmit(event) {
     alert('A name was submitted: ' + this.state.value);
-    
+    let inputData = [
+      {
+        id: this.state.value,
+        name: 'Hamburgare',
+        instructions: 'cook it',
+        ingredients: [
+          {
+            id: 1,
+            name: 'milk',
+            measurement: 'LITER',
+            amount: 1.0,
+          },
+          {
+            id: 2,
+            name: 'egg',
+            measurement: 'PIECES',
+            amount: 4.0,
+          },
+          {
+            id: 3,
+            name: 'wheat flour',
+            measurement: 'DECILITER',
+            amount: 4.0,
+          },
+        ],
+        category: {
+          id: 2,
+          name: 'Brunsh',
+        },
+      }
+    ]
     event.preventDefault();
   }
 
@@ -44,6 +74,10 @@ class TodoCreate extends React.Component {
       <label>
       <h3>value={this.state.value}</h3>
       </label>
+      <label>
+          Id:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
         <label>
           Name:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
