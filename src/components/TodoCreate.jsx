@@ -1,8 +1,10 @@
 import React, {component,useEffect,useState} from 'react';
 //import React, { useEffect, useState } from 'react';
 import Home from './Home';
+import TodoList from './TodoList';
 
 class TodoCreate extends React.Component {
+  state = { data: [], isLoading: true, showDetails: false, selectItem: '', showCreate: false};
   constructor(props) {
     super(props);
     //this.state = {value: 'hej'};
@@ -56,8 +58,19 @@ class TodoCreate extends React.Component {
           id: 2,
           name: 'Brunsh',
         },
-      }
+      },
+      
+    
+      this.setState({ data: inputData, isLoading: false }),
+      console.log(this.state.data),
+      <TodoList list={this.state.data} itemClick={this.displayDetails} />
+      
+      
+      
     ]
+
+/*Home.setState({ data: theList.concat(inputData), isLoading: false });*/
+
     event.preventDefault();
   }
 
